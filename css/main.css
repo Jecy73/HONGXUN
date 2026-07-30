@@ -51,7 +51,7 @@ width:100vw;
 height:100vh;
 
 
-max-width:750px;
+max-width:1000px;
 
 
 margin:auto;
@@ -182,7 +182,7 @@ letter-spacing:8px;
 
 animation:
 
-opening 2.2s forwards;
+opening 0.7s forwards;
 
 
 }
@@ -1079,4 +1079,53 @@ background-size:cover;
 background-position:center;
 
 
+}
+/* ===== 以下为新增：全屏背景（请保留在 CSS 最末尾） ===== */
+
+/* 1. 强制让 .page 背景透明，露出 body 背景 */
+body .page {
+    background: none !important;
+}
+
+/* 2. body 铺满全屏背景图（沿用你原有的类名） */
+body {
+    background-color: #250000;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+body.home-bg {
+    background-image: linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.45)),
+                      url("../photos/001.png");
+}
+body.final-bg {
+    background-image: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.40)),
+                      url("../photos/004.png");
+}
+body.team-bg {
+    background-image: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.42)),
+                      url("../photos/012.png");
+}
+body.overview-bg {
+    background-image: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.42)),
+                      url("../photos/006.png");
+}
+body.ggmm {
+    background-image: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.42)),
+                      url("../photos/003.png");
+}
+body.hhsta {
+    background-image: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.42)),
+                      url("../photos/006.png");
+}
+
+/* 如果有 exhibition.html 或 honor.html，按同样格式追加 */
+body.exhibition-bg {
+    background-image: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.42)),
+                      url("../photos/你的图.png");
+}
+body.honor-bg {
+    background-image: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.42)),
+                      url("../photos/你的图.png");
 }

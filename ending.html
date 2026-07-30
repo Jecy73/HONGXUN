@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+
+<head>
+
+
+<meta charset="UTF-8">
+
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+
+<title>
+薪火传承
+</title>
+
+
+<link rel="stylesheet"
+href="css/main.css">
+
+
+<style>
+
+
+.end-page{
+
+
+flex-direction:column;
+
+
+text-align:center;
+
+
+}
+
+
+
+
+
+
+
+
+
+.wave{
+
+
+font-family:"STKaiti";
+
+
+font-size:150px;
+
+
+color:#e5bd65;
+
+
+animation:
+
+wave 3s infinite;
+
+
+}
+
+
+
+@keyframes wave{
+
+
+0%{
+
+
+transform:
+
+translateY(0);
+
+
+}
+
+
+
+50%{
+
+
+transform:
+
+translateY(-20px);
+
+
+text-shadow:
+
+0 0 40px #e5bd65;
+
+
+}
+
+
+
+100%{
+
+
+transform:
+
+translateY(0);
+
+
+}
+
+
+
+}
+
+
+
+
+
+.title{
+
+
+font-size:55px;
+
+
+font-family:"STKaiti";
+
+
+letter-spacing:15px;
+
+
+line-height:1.8;
+
+
+}
+
+
+
+.line{
+
+
+width:180px;
+
+
+height:2px;
+
+
+background:#d9b15c;
+
+
+margin:40px auto;
+
+
+}
+
+
+
+
+
+.text{
+
+
+font-size:20px;
+
+
+letter-spacing:5px;
+
+
+line-height:2.5;
+
+
+}
+
+
+
+
+
+.seal{
+
+
+margin-top:50px;
+
+
+width:130px;
+
+
+height:130px;
+
+
+border:
+
+4px solid #c92727;
+
+
+border-radius:50%;
+
+
+display:flex;
+
+
+align-items:center;
+
+
+justify-content:center;
+
+
+font-family:"STKaiti";
+
+
+font-size:30px;
+
+
+color:#e33;
+
+
+transform:
+
+rotate(-15deg);
+
+
+}
+/* ===== 顶部导航栏 - 红底灰字 ===== */
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: #7a0f0f;           /* 红色背景 */
+    border-bottom: 2px solid #8a1515;
+    padding: 0 20px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-inner {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* 品牌名（也是灰字） */
+.nav-brand {
+    font-size: 22px;
+    font-family: "STKaiti", serif;
+    color: #cccccc;                /* 灰色 */
+    text-decoration: none;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.nav-brand:hover {
+    color: #ffffff;                /* hover变白 */
+}
+
+/* 导航链接 - 灰色 */
+.nav-links {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: #cccccc;                /* 灰色文字 */
+    text-decoration: none;
+    font-size: 15px;
+    padding: 6px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+/* 悬停时：红色加深 + 文字变白 */
+.nav-links a:hover {
+    background: #7a0f0f;           /* 红色加深（深红） */
+    color: #ffffff;                /* 文字变白 */
+}
+
+/* 当前激活页面：也是深红底 + 白字 */
+.nav-links a.active {
+    background: #7a0f0f;           /* 深红底 */
+    color: #ffffff;                /* 白字 */
+}
+
+/* 页面内容留出顶部空间 */
+.page {
+    padding-top: 80px !important;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        padding: 8px 0;
+    }
+    .top-nav {
+        height: auto;
+        padding: 8px 16px;
+    }
+    .nav-links {
+        gap: 4px;
+    }
+    .nav-links a {
+        font-size: 13px;
+        padding: 4px 12px;
+    }
+    .page {
+        padding-top: 110px !important;
+    }
+}
+</style>
+
+
+</head>
+
+
+
+<body>
+<nav class="top-nav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-brand">🏛 青岛工运纪念馆</a>
+        <div class="nav-links">
+            <a href="overview.html">纪念馆概况</a>
+            <a href="exhibition.html">四大展厅</a>
+            <a href="people.html">红色人物</a>
+            <a href="honor.html">荣誉墙</a>
+            <a href="team.html">团队介绍</a>
+            <a href="game.html">知识答题</a>
+            <a href="ending.html">结语</a>
+        </div>
+    </div>
+</nav>
+
+<body class="page end-page final-bg">
+
+
+
+
+
+
+
+
+<div class="title">
+
+
+红脉不断
+
+<br>
+
+薪火相传
+
+
+</div>
+
+
+
+<div class="line"></div>
+
+
+
+<div class="text">
+
+
+一段历史
+
+<br>
+
+
+一种精神
+
+<br>
+
+
+一份担当
+
+
+<br><br>
+
+
+让红色记忆永续
+
+<br>
+
+
+让奋斗力量传承
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<p style="
+margin-top:40px;
+line-height:2;
+">
+
+
+青岛大学计算机科学技术学院
+
+
+<br>
+
+
+“红脉寻根 · 薪火相传”实践团
+
+
+</p>
+
+
+
+</div>
+
+
+
+</body>
+
+
+</html>

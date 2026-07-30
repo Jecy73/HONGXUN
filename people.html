@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+
+<title>
+红色人物
+</title>
+
+
+<link rel="stylesheet"
+href="css/main.css">
+
+
+
+<style>
+
+/* ===== 顶部导航栏 - 红底灰字 ===== */
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: #7a0f0f;           /* 红色背景 */
+    border-bottom: 2px solid #8a1515;
+    padding: 0 20px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-inner {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* 品牌名（也是灰字） */
+.nav-brand {
+    font-size: 22px;
+    font-family: "STKaiti", serif;
+    color: #cccccc;                /* 灰色 */
+    text-decoration: none;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.nav-brand:hover {
+    color: #ffffff;                /* hover变白 */
+}
+
+/* 导航链接 - 灰色 */
+.nav-links {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: #cccccc;                /* 灰色文字 */
+    text-decoration: none;
+    font-size: 15px;
+    padding: 6px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+/* 悬停时：红色加深 + 文字变白 */
+.nav-links a:hover {
+    background: #7a0f0f;           /* 红色加深（深红） */
+    color: #ffffff;                /* 文字变白 */
+}
+
+/* 当前激活页面：也是深红底 + 白字 */
+.nav-links a.active {
+    background: #7a0f0f;           /* 深红底 */
+    color: #ffffff;                /* 白字 */
+}
+
+/* 页面内容留出顶部空间 */
+.page {
+    padding-top: 80px !important;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        padding: 8px 0;
+    }
+    .top-nav {
+        height: auto;
+        padding: 8px 16px;
+    }
+    .nav-links {
+        gap: 4px;
+    }
+    .nav-links a {
+        font-size: 13px;
+        padding: 4px 12px;
+    }
+    .page {
+        padding-top: 110px !important;
+    }
+}
+
+.people-page{
+
+
+display:block;
+
+
+padding:45px 25px;
+
+
+overflow-y:auto;
+
+
+}
+
+
+
+
+.title{
+
+
+font-size:45px;
+
+
+font-family:"STKaiti";
+
+
+letter-spacing:10px;
+
+
+text-align:center;
+
+
+}
+
+
+
+.subtitle{
+
+
+text-align:center;
+
+
+color:#e5bd65;
+
+
+margin:20px 0 60px;
+
+
+letter-spacing:5px;
+
+
+}
+
+
+
+
+
+/*
+人物整体
+*/
+
+
+.person-block{
+
+
+margin-bottom:70px;
+
+
+padding-bottom:45px;
+
+
+border-bottom:
+
+1px solid rgba(217,177,92,.35);
+
+
+}
+
+
+
+/*
+头像+姓名区域
+*/
+
+
+.person-head{
+
+
+display:flex;
+
+
+align-items:center;
+
+
+gap:25px;
+
+
+}
+
+
+
+.round-photo{
+
+
+width:135px;
+
+
+height:135px;
+
+
+min-width:135px;
+
+
+border-radius:50%;
+
+
+
+background:
+
+
+linear-gradient(
+
+rgba(0,0,0,.15),
+
+rgba(0,0,0,.4)
+
+),
+
+
+
+url("./photos/013 (1).png");
+
+
+
+background-size:cover;
+
+
+background-position:center;
+
+
+
+border:
+
+3px solid #d9b15c;
+
+
+
+box-shadow:
+
+0 0 25px rgba(217,177,92,.45);
+
+
+
+animation:
+
+photoShow 1.2s;
+
+
+
+}
+
+
+
+@keyframes photoShow{
+
+
+from{
+
+
+opacity:0;
+
+
+transform:
+
+scale(.6);
+
+
+}
+
+
+
+to{
+
+
+opacity:1;
+
+
+transform:
+
+scale(1);
+
+
+}
+
+
+}
+
+
+
+
+
+.person-info{
+
+
+flex:1;
+
+
+}
+
+
+
+.person-name{
+
+
+font-size:38px;
+
+
+font-family:"STKaiti";
+
+
+color:#e5bd65;
+
+
+letter-spacing:7px;
+
+
+margin-bottom:15px;
+
+
+}
+
+
+
+
+.tag{
+
+
+display:inline-block;
+
+
+padding:6px 15px;
+
+
+margin:5px 5px 5px 0;
+
+
+border:
+
+1px solid #d9b15c;
+
+
+color:#e5bd65;
+
+
+font-size:14px;
+
+
+}
+
+
+
+
+
+.text{
+
+
+margin-top:25px;
+
+
+font-size:18px;
+
+
+line-height:2.2;
+
+
+text-align:justify;
+
+
+}
+
+
+
+
+
+.quote{
+
+
+margin-top:25px;
+
+
+padding:18px;
+
+
+border-left:
+
+3px solid #d9b15c;
+
+
+background:
+
+rgba(255,255,255,.08);
+
+
+
+font-family:"STKaiti";
+
+
+font-size:24px;
+
+
+line-height:1.8;
+
+
+}
+
+
+
+
+
+button{
+
+
+display:block;
+
+
+margin:40px auto;
+
+
+}
+
+
+
+
+
+@media(max-width:600px){
+
+
+
+.person-head{
+
+
+gap:18px;
+
+
+}
+
+
+
+.round-photo{
+
+
+width:105px;
+
+
+height:105px;
+
+
+min-width:105px;
+
+
+}
+
+
+
+.person-name{
+
+
+font-size:32px;
+
+
+}
+
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+<nav class="top-nav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-brand">🏛 青岛工运纪念馆</a>
+        <div class="nav-links">
+            <a href="overview.html">纪念馆概况</a>
+            <a href="exhibition.html">四大展厅</a>
+            <a href="people.html">红色人物</a>
+            <a href="honor.html">荣誉墙</a>
+            <a href="team.html">团队介绍</a>
+            <a href="game.html">知识答题</a>
+            <a href="ending.html">结语</a>
+        </div>
+    </div>
+</nav>
+
+<body class="page people-page">
+
+
+
+
+
+<h1 class="title">
+
+红色人物
+
+</h1>
+
+
+
+<div class="subtitle">
+
+百年工运中的奋斗者
+
+</div>
+
+
+
+
+
+
+
+<!-- 邓恩铭 -->
+
+<section class="person-block">
+
+
+<div class="person-head">
+
+
+<div class="round-photo"
+
+style="background-image:url('./photos/013 (1).png');">
+
+</div>
+
+
+
+<div class="person-info">
+
+
+<h2 class="person-name">
+
+邓恩铭
+
+</h2>
+
+
+<div class="tag">
+
+革命先驱
+
+</div>
+
+
+<div class="tag">
+
+青岛工运先行者
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="text">
+
+
+&nbsp&nbsp&nbsp&nbsp        邓恩铭是中国共产党早期重要领导人之一。
+
+
+<br>
+
+
+
+&nbsp&nbsp&nbsp&nbsp1920年11月，邓恩铭与王尽美等人组织成立"励新学会"，创办《励新》半月刊。1922年1月，邓恩铭赴莫斯科参加远东各国共产党和民族革命团体第一次代表大会，受到列宁的亲切接见。1925年2月，发动青岛胶济铁路工人大罢工 1927年4月，邓恩铭赴武汉出席中共第五次全国代表大会。后任中共山东省执行委员会书记。1928年12月，由于叛徒出卖，邓恩铭在济南被捕入狱。1931年4月5日，邓恩铭和战友们被押到济南市纬八路刑场，慷慨就义，终年30岁 。
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- 王尽美 -->
+
+<section class="person-block">
+
+
+<div class="person-head">
+
+
+<div class="round-photo"
+
+style="background-image:url('./photos/013 (6).png');">
+
+</div>
+
+
+
+
+<div class="person-info">
+
+
+<h2 class="person-name">
+
+王尽美
+
+</h2>
+
+
+
+<div class="tag">
+
+革命先驱
+
+</div>
+
+
+<div class="tag">
+
+山东党组织创建者之一
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="text">
+
+
+ &nbsp&nbsp&nbsp&nbsp王尽美积极传播马克思主义思想，
+
+推动山东地区革命运动发展。
+
+
+<br>
+
+&nbsp&nbsp&nbsp&nbsp1920年，王尽美与邓恩铭等人发起成立"励新学会"，创办《励新》半月刊，研究和传播新思想、新文化。1921年，作为代表参与中共一大会议。1922年7月中下旬，出席中国共产党第二次全国代表大会。在终日的奔波中，王尽美积劳成疾感染了肺结核病，他以带病之身，奔走于济南、北京、上海、广州等地，1925年8月19日，王尽美病逝于青岛，时年27岁 。
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- 李慰农 -->
+
+
+<section class="person-block">
+
+
+<div class="person-head">
+
+
+<div class="round-photo"
+
+style="background-image:url('./photos/013 (3).png');">
+
+</div>
+
+
+
+
+<div class="person-info">
+
+
+<h2 class="person-name">
+
+李慰农
+
+</h2>
+
+
+<div class="tag">
+
+工人运动领导者
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="text">
+&nbsp&nbsp&nbsp&nbsp李慰农长期关注工人群众，
+
+积极组织工人开展斗争。
+
+
+<br>&nbsp&nbsp&nbsp&nbsp1919年赴法勤工俭学，1921年3月组建旅欧共产主义小组，1922年与赵世炎、周恩来等在巴黎成立旅欧中国少年共产党，1923年底入苏联莫斯科东方大学学习。1924年底回国后，领导青岛三次工人大罢工暨五卅反帝爱国运动，1925年7月29日深夜，被反动军阀押赴于青岛团岛刑场秘密杀害，时年30岁。
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- 郝建秀 -->
+
+<section class="person-block">
+
+
+<div class="person-head">
+
+
+<div class="round-photo"
+
+style="background-image:url('./photos/013 (4).png');">
+
+</div>
+
+
+
+
+<div class="person-info">
+
+
+<h2 class="person-name">
+
+郝建秀
+
+</h2>
+
+
+
+<div class="tag">
+
+劳动模范
+
+</div>
+
+
+<div class="tag">
+
+工匠精神代表
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="text">
+
+&nbsp&nbsp&nbsp&nbsp16岁进入纺织行业，
+
+创造“郝建秀工作法”。
+
+
+<br>&nbsp&nbsp&nbsp&nbsp她将皮辊花率从1.5%降低至0.25%，
+
+提高生产效率，
+
+成为全国劳动模范。1954年5月加入中国共产党，1949年9月参加工作，华东纺织工学院纺织工程系棉织专业毕业，大学学历，研究员级高级工程师。 曾任第十届全国政协副主席。
+
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- 许振超 -->
+
+
+<section class="person-block">
+
+
+<div class="person-head">
+
+
+<div class="round-photo"
+
+style="background-image:url('./photos/013 (5).png');">
+
+</div>
+
+
+
+<div class="person-info">
+
+
+<h2 class="person-name">
+
+许振超
+
+</h2>
+
+
+<div class="tag">
+
+金牌工人
+
+</div>
+
+
+<div class="tag">
+
+振超效率
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="text">
+
+&nbsp&nbsp&nbsp&nbsp许振超扎根港口一线，
+
+不断突破技术极限。
+
+
+<br>
+
+&nbsp&nbsp&nbsp&nbsp先后九次刷新集装箱装卸世界纪录，
+
+创造享誉全球的“振超效率”。1974年进青岛港工作。曾先后荣获青岛市劳动模范，青岛市优秀共产党员，山东省有突出贡献工人技师，省自学成才先进个人，全国"五一"劳动奖章获得者和全国交通系统劳动模范，全国劳动模范，全国人大代表，全国优秀共产党员等称号，被誉为新时期产业工人的杰出代表。曾任青岛湾集装箱码头有限责任公司固机高级经理，中华全国总工会副主席(兼职)，第十一届、十二届全国人大常委。
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<button onclick="location.href='honor.html'">
+
+查看纪念馆荣誉
+
+</button>
+
+
+
+</div>
+
+
+
+</body>
+
+</html>

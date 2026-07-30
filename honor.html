@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+
+<head>
+
+
+<meta charset="UTF-8">
+
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+
+<title>
+纪念馆荣誉
+</title>
+
+
+<link rel="stylesheet"
+href="css/main.css">
+
+
+
+<style>
+/* ===== 顶部导航栏 - 红底灰字 ===== */
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: #7a0f0f;           /* 红色背景 */
+    border-bottom: 2px solid #8a1515;
+    padding: 0 20px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-inner {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* 品牌名（也是灰字） */
+.nav-brand {
+    font-size: 22px;
+    font-family: "STKaiti", serif;
+    color: #cccccc;                /* 灰色 */
+    text-decoration: none;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.nav-brand:hover {
+    color: #ffffff;                /* hover变白 */
+}
+
+/* 导航链接 - 灰色 */
+.nav-links {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: #cccccc;                /* 灰色文字 */
+    text-decoration: none;
+    font-size: 15px;
+    padding: 6px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+/* 悬停时：红色加深 + 文字变白 */
+.nav-links a:hover {
+    background: #7a0f0f;           /* 红色加深（深红） */
+    color: #ffffff;                /* 文字变白 */
+}
+
+/* 当前激活页面：也是深红底 + 白字 */
+.nav-links a.active {
+    background: #7a0f0f;           /* 深红底 */
+    color: #ffffff;                /* 白字 */
+}
+
+/* 页面内容留出顶部空间 */
+.page {
+    padding-top: 80px !important;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        padding: 8px 0;
+    }
+    .top-nav {
+        height: auto;
+        padding: 8px 16px;
+    }
+    .nav-links {
+        gap: 4px;
+    }
+    .nav-links a {
+        font-size: 13px;
+        padding: 4px 12px;
+    }
+    .page {
+        padding-top: 110px !important;
+    }
+}
+.honor-page{
+
+
+display:block;
+
+
+padding:50px 25px;
+
+
+overflow-y:auto;
+
+
+}
+
+
+
+.title{
+
+
+font-family:"STKaiti";
+
+
+font-size:45px;
+
+
+letter-spacing:10px;
+
+
+text-align:center;
+
+
+}
+
+
+
+.subtitle{
+
+
+text-align:center;
+
+
+color:#e5bd65;
+
+
+letter-spacing:5px;
+
+
+margin:25px 0 60px;
+
+
+}
+
+
+
+
+.honor-box{
+
+
+margin-bottom:35px;
+
+
+padding:30px 20px;
+
+
+border:
+
+1px solid rgba(217,177,92,.7);
+
+
+
+background:
+
+rgba(0,0,0,.25);
+
+
+
+position:relative;
+
+
+overflow:hidden;
+
+
+}
+
+
+
+
+.honor-box::before{
+
+
+content:"荣";
+
+
+position:absolute;
+
+
+right:15px;
+
+
+top:5px;
+
+
+font-size:80px;
+
+
+font-family:"STKaiti";
+
+
+color:
+
+rgba(217,177,92,.15);
+
+
+}
+
+
+
+
+.honor-name{
+
+
+font-size:25px;
+
+
+color:#e5bd65;
+
+
+font-family:"STKaiti";
+
+
+margin-bottom:15px;
+
+
+}
+
+
+
+.text{
+
+
+font-size:18px;
+
+
+line-height:2;
+
+
+}
+
+
+
+.badge{
+
+
+width:130px;
+
+
+height:130px;
+
+
+margin:50px auto;
+
+
+border-radius:50%;
+
+
+border:
+
+4px solid #d9b15c;
+
+
+display:flex;
+
+
+align-items:center;
+
+
+justify-content:center;
+
+
+text-align:center;
+
+
+font-family:"STKaiti";
+
+
+font-size:28px;
+
+
+color:#e5bd65;
+
+
+animation:
+
+pulse 2s infinite;
+
+
+}
+
+
+
+@keyframes pulse{
+
+
+50%{
+
+
+transform:scale(1.08);
+
+
+box-shadow:
+
+0 0 30px #d9b15c;
+
+
+}
+
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+<nav class="top-nav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-brand">🏛 青岛工运纪念馆</a>
+        <div class="nav-links">
+            <a href="overview.html">纪念馆概况</a>
+            <a href="exhibition.html">四大展厅</a>
+            <a href="people.html">红色人物</a>
+            <a href="honor.html">荣誉墙</a>
+            <a href="team.html">团队介绍</a>
+            <a href="game.html">知识答题</a>
+            <a href="ending.html">结语</a>
+        </div>
+    </div>
+</nav>
+
+<body class="page honor-page">
+
+
+<h1 class="title">
+
+荣耀见证
+
+</h1>
+
+
+
+<div class="subtitle">
+
+红色文化传承的重要阵地
+
+</div>
+
+
+
+
+
+<div class="honor-box">
+
+
+<div class="honor-name">
+
+青岛新时代文明实践基地
+
+</div>
+
+
+<div class="text">
+
+
+发挥红色文化传播作用，
+
+成为新时代文明实践的重要平台。
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="honor-box">
+
+
+<div class="honor-name">
+
+青岛市干部教育特色教学点
+
+</div>
+
+
+<div class="text">
+
+
+依托百年工运历史资源，
+
+开展党史学习教育和干部培训。
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="honor-box">
+
+
+<div class="honor-name">
+
+全省职工爱国主义教育基地
+
+</div>
+
+
+<div class="text">
+
+
+面向广大职工群体，
+
+弘扬劳动精神和奋斗精神。
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="honor-box">
+
+
+<div class="honor-name">
+
+青岛市惠工宣讲示范点
+
+</div>
+
+
+<div class="text">
+
+
+通过宣讲活动，
+
+让工运故事走近群众。
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="honor-box">
+
+
+<div class="honor-name">
+
+青岛市三八红旗集体
+
+</div>
+
+
+<div class="text">
+
+
+展现新时代红色文化传播力量。
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="badge">
+
+
+红色<br>
+
+荣誉
+
+
+</div>
+
+
+
+
+
+<button onclick="location.href='game.html'">
+
+
+开启红色答题
+
+
+</button>
+
+
+
+</div>
+
+
+
+</body>
+
+</html>

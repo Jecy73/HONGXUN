@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+
+<head>
+
+
+<meta charset="UTF-8">
+
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+
+<title>
+实践团
+</title>
+
+
+<link rel="stylesheet"
+href="css/main.css">
+
+
+
+<style>
+
+/* ===== 顶部导航栏 - 红底灰字 ===== */
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: #7a0f0f;           /* 红色背景 */
+    border-bottom: 2px solid #8a1515;
+    padding: 0 20px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-inner {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* 品牌名（也是灰字） */
+.nav-brand {
+    font-size: 22px;
+    font-family: "STKaiti", serif;
+    color: #cccccc;                /* 灰色 */
+    text-decoration: none;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.nav-brand:hover {
+    color: #ffffff;                /* hover变白 */
+}
+
+/* 导航链接 - 灰色 */
+.nav-links {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: #cccccc;                /* 灰色文字 */
+    text-decoration: none;
+    font-size: 15px;
+    padding: 6px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+/* 悬停时：红色加深 + 文字变白 */
+.nav-links a:hover {
+    background: #7a0f0f;           /* 红色加深（深红） */
+    color: #ffffff;                /* 文字变白 */
+}
+
+/* 当前激活页面：也是深红底 + 白字 */
+.nav-links a.active {
+    background: #7a0f0f;           /* 深红底 */
+    color: #ffffff;                /* 白字 */
+}
+
+/* 页面内容留出顶部空间 */
+.page {
+    padding-top: 80px !important;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        padding: 8px 0;
+    }
+    .top-nav {
+        height: auto;
+        padding: 8px 16px;
+    }
+    .nav-links {
+        gap: 4px;
+    }
+    .nav-links a {
+        font-size: 13px;
+        padding: 4px 12px;
+    }
+    .page {
+        padding-top: 110px !important;
+    }
+}.team-page{
+
+
+display:block;
+
+
+padding:45px 25px;
+
+
+overflow-y:auto;
+
+
+}
+
+
+
+.title{
+
+
+font-size:45px;
+
+
+font-family:"STKaiti";
+
+
+letter-spacing:10px;
+
+
+text-align:center;
+
+
+}
+
+
+
+.subtitle{
+
+
+margin:25px 0 55px;
+
+
+text-align:center;
+
+
+color:#e5bd65;
+
+
+letter-spacing:5px;
+
+
+}
+
+
+
+
+
+.hero{
+
+
+padding:30px;
+
+
+border:
+
+1px solid rgba(217,177,92,.7);
+
+
+background:
+
+rgba(0,0,0,.3);
+
+
+font-size:22px;
+
+
+line-height:2;
+
+
+text-align:center;
+
+
+}
+
+
+
+
+
+.section{
+
+
+margin-top:50px;
+
+
+}
+
+
+
+.section-title{
+
+
+font-size:30px;
+
+
+font-family:"STKaiti";
+
+
+color:#e5bd65;
+
+
+margin-bottom:20px;
+
+
+}
+
+
+
+
+
+.text{
+
+
+font-size:18px;
+
+
+line-height:2.2;
+
+
+text-align:justify;
+
+
+}
+
+
+
+.step{
+
+
+margin-top:25px;
+
+
+padding:20px;
+
+
+border-left:
+
+3px solid #d9b15c;
+
+
+background:
+
+rgba(255,255,255,.08);
+
+
+line-height:2;
+
+
+}
+
+
+
+.number{
+
+
+font-size:45px;
+
+
+font-family:"STKaiti";
+
+
+color:#e5bd65;
+
+
+}
+
+
+
+
+</style>
+
+
+
+</head>
+
+
+
+<body>
+
+<nav class="top-nav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-brand">🏛 青岛工运纪念馆</a>
+        <div class="nav-links">
+            <a href="overview.html">纪念馆概况</a>
+            <a href="exhibition.html">四大展厅</a>
+            <a href="people.html">红色人物</a>
+            <a href="honor.html">荣誉墙</a>
+            <a href="team.html">团队介绍</a>
+            <a href="game.html">知识答题</a>
+            <a href="ending.html">结语</a>
+        </div>
+    </div>
+</nav>
+<body class="page team-page team-bg">
+
+
+
+<h1 class="title">
+
+红脉寻根 薪火相传
+
+</h1>
+
+
+
+<div class="subtitle">
+
+实践团
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="section">
+
+
+<div class="section-title">
+
+实践初心
+
+</div>
+
+
+<div class="text">
+
+
+历史因传承而鲜活，
+
+文化因传播而延续。
+
+
+<br><br>
+
+
+实践团以青岛工人运动纪念馆为依托，
+
+通过数字技术探索红色文化传播新方式，
+
+让百年工运故事被更多青年看见。
+
+
+
+
+
+
+<div class="photo-box">
+
+<img src="./photos/005.png">
+
+</div>
+
+
+<div class="section">
+
+
+<div class="section-title">
+
+人员组成
+
+</div>
+
+
+<div class="text">
+
+
+    <span style="font-family:'STKaiti'; font-size:22px; color:#e5bd65; letter-spacing:3px;">（从左到右）</span>
+
+   <span style="font-size:20px; color:#f5e6c8; margin-left:25px; letter-spacing:2px;">孙源晨、刘媛、姚嘉欣、刘希喆</span>
+
+</div>
+
+<div class="section">
+
+
+<div class="section-title">
+
+实践内容
+
+</div>
+
+
+
+<div class="step">
+
+
+<span class="number">
+
+01 历史学习
+
+</span>
+
+
+<br>
+
+
+走进纪念馆，
+
+学习百年青岛工运历史。
+
+
+</div>
+
+
+
+<div class="step">
+
+
+<span class="number">
+
+02 资料整理
+
+</span>
+
+
+<br>
+
+
+整理历史资料，
+
+挖掘红色文化价值。
+
+
+</div>
+
+
+
+<div class="step">
+
+
+<span class="number">
+
+03 数字展示
+
+</span>
+
+
+<br>
+
+
+运用计算机技术，
+
+设计数字化展示 H5。
+
+
+</div>
+
+
+
+<div class="step">
+
+
+<span class="number">
+
+04 精神传播
+
+</span>
+
+
+<br>
+
+
+以青年视角传播工运精神。
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="section">
+
+
+<div class="section-title">
+
+数字赋能
+
+</div>
+
+
+<div class="text">
+
+
+计算机科学技术与红色文化相结合，
+
+让历史资料从静态展示走向互动体验。
+
+
+<br><br>
+
+
+通过网页设计、交互开发、
+
+数字展示等方式，
+
+实现红色文化的创新传播。
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<button onclick="location.href='ending.html'">
+
+结束语
+
+</button>
+
+
+
+</div>
+
+</div>
+<!-- ===== 人员组成（新增） ===== -->
+
+
+
+
+
+</div>
+
+</body>
+
+
+</html>
